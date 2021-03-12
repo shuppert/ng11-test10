@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~primeng/resources/themes/saga-blue/theme.css";
+@import "~primeng/resources/primeng.min.css";
+@import "~primeicons/primeicons.css";
+body {
+    padding-top: 5rem;
+}
+
+pre {
+    background-color: lightgray;
+    padding: 10px;
+}
+
+.container {
+    border: 2px #f34842 dashed !important;
+    padding: 20px;
+}
+
+.test-container {
+    border: none !important;
+    padding: 20px;
+}
+
+.duiapp2-container {
+    border: 2px #22716f dashed !important;
+    padding: 20px;
+}

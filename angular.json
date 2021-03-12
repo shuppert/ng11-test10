@@ -1,0 +1,377 @@
+{
+    "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+    "version": 1,
+    "newProjectRoot": "projects",
+    "projects": {
+        "toplevel": {
+            "projectType": "application",
+            "schematics": {
+                "@schematics/angular:component": {
+                    "style": "scss"
+                }
+            },
+            "root": "projects/toplevel",
+            "sourceRoot": "projects/toplevel/src",
+            "prefix": "app",
+            "architect": {
+                "build": {
+                    "builder": "ngx-build-plus:browser",
+                    "options": {
+                        "outputPath": "dist/toplevel",
+                        "index": "projects/toplevel/src/index.html",
+                        "main": "projects/toplevel/src/main.ts",
+                        "polyfills": "projects/toplevel/src/polyfills.ts",
+                        "tsConfig": "projects/toplevel/tsconfig.app.json",
+                        "aot": true,
+                        "assets": [
+                            "projects/toplevel/src/favicon.ico",
+                            "projects/toplevel/src/assets"
+                        ],
+                        "styles": [
+                            "projects/toplevel/src/styles.scss"
+                        ],
+                        "scripts": [],
+                        "extraWebpackConfig": "projects/toplevel/webpack.config.js"
+                    },
+                    "configurations": {
+                        "production": {
+                            "fileReplacements": [{
+                                "replace": "projects/toplevel/src/environments/environment.ts",
+                                "with": "projects/toplevel/src/environments/environment.prod.ts"
+                            }],
+                            "optimization": true,
+                            "outputHashing": "all",
+                            "sourceMap": false,
+                            "namedChunks": false,
+                            "extractLicenses": true,
+                            "vendorChunk": false,
+                            "buildOptimizer": true,
+                            "budgets": [{
+                                    "type": "initial",
+                                    "maximumWarning": "2mb",
+                                    "maximumError": "5mb"
+                                },
+                                {
+                                    "type": "anyComponentStyle",
+                                    "maximumWarning": "6kb",
+                                    "maximumError": "10kb"
+                                }
+                            ],
+                            "extraWebpackConfig": "projects/toplevel/webpack.prod.config.js"
+                        }
+                    }
+                },
+                "serve": {
+                    "builder": "ngx-build-plus:dev-server",
+                    "options": {
+                        "browserTarget": "toplevel:build",
+                        "port": 4200,
+                        "extraWebpackConfig": "projects/toplevel/webpack.config.js"
+                    },
+                    "configurations": {
+                        "production": {
+                            "browserTarget": "toplevel:build:production",
+                            "extraWebpackConfig": "projects/toplevel/webpack.prod.config.js"
+                        }
+                    }
+                },
+                "extract-i18n": {
+                    "builder": "@angular-devkit/build-angular:extract-i18n",
+                    "options": {
+                        "browserTarget": "toplevel:build"
+                    }
+                },
+                "test": {
+                    "builder": "ngx-build-plus:karma",
+                    "options": {
+                        "main": "projects/toplevel/src/test.ts",
+                        "polyfills": "projects/toplevel/src/polyfills.ts",
+                        "tsConfig": "projects/toplevel/tsconfig.spec.json",
+                        "karmaConfig": "projects/toplevel/karma.conf.js",
+                        "assets": [
+                            "projects/toplevel/src/favicon.ico",
+                            "projects/toplevel/src/assets"
+                        ],
+                        "styles": [
+                            "projects/toplevel/src/styles.scss"
+                        ],
+                        "scripts": [],
+                        "extraWebpackConfig": "projects/toplevel/webpack.config.js"
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "projects/toplevel/tsconfig.app.json",
+                            "projects/toplevel/tsconfig.spec.json",
+                            "projects/toplevel/e2e/tsconfig.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**"
+                        ]
+                    }
+                },
+                "e2e": {
+                    "builder": "@angular-devkit/build-angular:protractor",
+                    "options": {
+                        "protractorConfig": "projects/toplevel/e2e/protractor.conf.js",
+                        "devServerTarget": "toplevel:serve"
+                    },
+                    "configurations": {
+                        "production": {
+                            "devServerTarget": "toplevel:serve:production"
+                        }
+                    }
+                }
+            }
+        },
+        "duiapp": {
+            "projectType": "application",
+            "schematics": {
+                "@schematics/angular:component": {
+                    "style": "scss"
+                }
+            },
+            "root": "projects/duiapp",
+            "sourceRoot": "projects/duiapp/src",
+            "prefix": "app",
+            "architect": {
+                "build": {
+                    "builder": "ngx-build-plus:browser",
+                    "options": {
+                        "outputPath": "dist/duiapp",
+                        "index": "projects/duiapp/src/index.html",
+                        "main": "projects/duiapp/src/main.ts",
+                        "polyfills": "projects/duiapp/src/polyfills.ts",
+                        "tsConfig": "projects/duiapp/tsconfig.app.json",
+                        "aot": true,
+                        "assets": [
+                            "projects/duiapp/src/favicon.ico",
+                            "projects/duiapp/src/assets"
+                        ],
+                        "styles": [
+                            "projects/duiapp/src/styles.scss"
+                        ],
+                        "scripts": [],
+                        "extraWebpackConfig": "projects/duiapp/webpack.config.js"
+                    },
+                    "configurations": {
+                        "production": {
+                            "fileReplacements": [{
+                                "replace": "projects/duiapp/src/environments/environment.ts",
+                                "with": "projects/duiapp/src/environments/environment.prod.ts"
+                            }],
+                            "optimization": true,
+                            "outputHashing": "all",
+                            "sourceMap": false,
+                            "namedChunks": false,
+                            "extractLicenses": true,
+                            "vendorChunk": false,
+                            "buildOptimizer": true,
+                            "budgets": [{
+                                    "type": "initial",
+                                    "maximumWarning": "2mb",
+                                    "maximumError": "5mb"
+                                },
+                                {
+                                    "type": "anyComponentStyle",
+                                    "maximumWarning": "6kb",
+                                    "maximumError": "10kb"
+                                }
+                            ],
+                            "extraWebpackConfig": "projects/duiapp/webpack.prod.config.js"
+                        }
+                    }
+                },
+                "serve": {
+                    "builder": "ngx-build-plus:dev-server",
+                    "options": {
+                        "browserTarget": "duiapp:build",
+                        "port": 4201,
+                        "extraWebpackConfig": "projects/duiapp/webpack.config.js"
+                    },
+                    "configurations": {
+                        "production": {
+                            "browserTarget": "duiapp:build:production",
+                            "extraWebpackConfig": "projects/duiapp/webpack.prod.config.js"
+                        }
+                    }
+                },
+                "extract-i18n": {
+                    "builder": "@angular-devkit/build-angular:extract-i18n",
+                    "options": {
+                        "browserTarget": "duiapp:build"
+                    }
+                },
+                "test": {
+                    "builder": "ngx-build-plus:karma",
+                    "options": {
+                        "main": "projects/duiapp/src/test.ts",
+                        "polyfills": "projects/duiapp/src/polyfills.ts",
+                        "tsConfig": "projects/duiapp/tsconfig.spec.json",
+                        "karmaConfig": "projects/duiapp/karma.conf.js",
+                        "assets": [
+                            "projects/duiapp/src/favicon.ico",
+                            "projects/duiapp/src/assets"
+                        ],
+                        "styles": [
+                            "projects/duiapp/src/styles.scss"
+                        ],
+                        "scripts": [],
+                        "extraWebpackConfig": "projects/duiapp/webpack.config.js"
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "projects/duiapp/tsconfig.app.json",
+                            "projects/duiapp/tsconfig.spec.json",
+                            "projects/duiapp/e2e/tsconfig.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**"
+                        ]
+                    }
+                },
+                "e2e": {
+                    "builder": "@angular-devkit/build-angular:protractor",
+                    "options": {
+                        "protractorConfig": "projects/duiapp/e2e/protractor.conf.js",
+                        "devServerTarget": "duiapp:serve"
+                    },
+                    "configurations": {
+                        "production": {
+                            "devServerTarget": "duiapp:serve:production"
+                        }
+                    }
+                }
+            }
+        },
+        "duiapp2": {
+            "projectType": "application",
+            "schematics": {
+                "@schematics/angular:component": {
+                    "style": "scss"
+                }
+            },
+            "root": "projects/duiapp2",
+            "sourceRoot": "projects/duiapp2/src",
+            "prefix": "app",
+            "architect": {
+                "build": {
+                    "builder": "ngx-build-plus:browser",
+                    "options": {
+                        "outputPath": "dist/duiapp2",
+                        "index": "projects/duiapp2/src/index.html",
+                        "main": "projects/duiapp2/src/main.ts",
+                        "polyfills": "projects/duiapp2/src/polyfills.ts",
+                        "tsConfig": "projects/duiapp2/tsconfig.app.json",
+                        "aot": true,
+                        "assets": [
+                            "projects/duiapp2/src/favicon.ico",
+                            "projects/duiapp2/src/assets"
+                        ],
+                        "styles": [
+                            "projects/duiapp2/src/styles.scss"
+                        ],
+                        "scripts": [],
+                        "extraWebpackConfig": "projects/duiapp2/webpack.config.js"
+                    },
+                    "configurations": {
+                        "production": {
+                            "fileReplacements": [{
+                                "replace": "projects/duiapp2/src/environments/environment.ts",
+                                "with": "projects/duiapp2/src/environments/environment.prod.ts"
+                            }],
+                            "optimization": true,
+                            "outputHashing": "all",
+                            "sourceMap": false,
+                            "namedChunks": false,
+                            "extractLicenses": true,
+                            "vendorChunk": false,
+                            "buildOptimizer": true,
+                            "budgets": [{
+                                    "type": "initial",
+                                    "maximumWarning": "2mb",
+                                    "maximumError": "5mb"
+                                },
+                                {
+                                    "type": "anyComponentStyle",
+                                    "maximumWarning": "6kb",
+                                    "maximumError": "10kb"
+                                }
+                            ],
+                            "extraWebpackConfig": "projects/duiapp2/webpack.prod.config.js"
+                        }
+                    }
+                },
+                "serve": {
+                    "builder": "ngx-build-plus:dev-server",
+                    "options": {
+                        "browserTarget": "duiapp2:build",
+                        "extraWebpackConfig": "projects/duiapp2/webpack.config.js",
+                        "port": 4202
+                    },
+                    "configurations": {
+                        "production": {
+                            "browserTarget": "duiapp2:build:production",
+                            "extraWebpackConfig": "projects/duiapp2/webpack.prod.config.js"
+                        }
+                    }
+                },
+                "extract-i18n": {
+                    "builder": "@angular-devkit/build-angular:extract-i18n",
+                    "options": {
+                        "browserTarget": "duiapp2:build"
+                    }
+                },
+                "test": {
+                    "builder": "ngx-build-plus:karma",
+                    "options": {
+                        "main": "projects/duiapp2/src/test.ts",
+                        "polyfills": "projects/duiapp2/src/polyfills.ts",
+                        "tsConfig": "projects/duiapp2/tsconfig.spec.json",
+                        "karmaConfig": "projects/duiapp2/karma.conf.js",
+                        "assets": [
+                            "projects/duiapp2/src/favicon.ico",
+                            "projects/duiapp2/src/assets"
+                        ],
+                        "styles": [
+                            "projects/duiapp2/src/styles.scss"
+                        ],
+                        "scripts": [],
+                        "extraWebpackConfig": "projects/duiapp2/webpack.config.js"
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "projects/duiapp2/tsconfig.app.json",
+                            "projects/duiapp2/tsconfig.spec.json",
+                            "projects/duiapp2/e2e/tsconfig.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**"
+                        ]
+                    }
+                },
+                "e2e": {
+                    "builder": "@angular-devkit/build-angular:protractor",
+                    "options": {
+                        "protractorConfig": "projects/duiapp2/e2e/protractor.conf.js",
+                        "devServerTarget": "duiapp2:serve"
+                    },
+                    "configurations": {
+                        "production": {
+                            "devServerTarget": "duiapp2:serve:production"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "defaultProject": "toplevel"
+}

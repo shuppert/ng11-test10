@@ -1,0 +1,20 @@
+<div class="container test-container">
+    <div class="row">
+        <h2>Test Component</h2>
+    </div>
+    <div class="row">
+        <button class="btn btn-primary" (click)="onClick()">Programatically route to Component C from Top Level</button>
+    </div>
+    <br>
+    <div class="row">
+        <button class="btn btn-primary" (click)="onClickModal()">Programatically open Component D in a Modal</button>
+    </div>
+    <br>
+    <div class="row">
+        <button class="btn btn-primary" (click)="onClickLazyInstatiateComponent()">Programatically instanitate and inject Component B</button>
+    </div>
+    <br>
+    <div>
+        <ng-container #vc></ng-container>
+    </div>
+</div>

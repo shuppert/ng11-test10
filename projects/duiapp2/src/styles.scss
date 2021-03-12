@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~primeng/resources/themes/saga-blue/theme.css";
+@import "~primeng/resources/primeng.min.css";
+@import "~primeicons/primeicons.css";
+body {
+    padding-top: 2.5rem;
+}
+
+.container {
+    border: 2px #22716f dashed;
+    padding: 20px;
+}
