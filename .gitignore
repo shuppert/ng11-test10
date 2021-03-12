@@ -1,0 +1,88 @@
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+### Gradle ###
+.gradle
+**/build/
+gradle/wrapper/gradle-wrapper.jar
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+
+### NetBeans ###
+nbproject/private/
+nbbuild/
+nbdist/
+.nb-gradle/
+
+### Visual Studio ###
+bin/
+obj/
+.vs/
+/**/*.csproj.user
+
+### Compiled output ###
+dist/
+tmp/
+out-tsc/
+
+### Node/Npm dependencies ###
+**/node_modules/
+**/dist/
+
+### Katalon ###
+pii-katalon/katalon/Reports/*
+pii-katalon/katalon/report/*
+
+### IDE - VSCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+### misc ###
+ng-pm-ui/.sass-cache
+ng-pm-ui/connect.lock
+ng-pm-ui/coverage
+ng-pm-ui/debug.log
+ng-pm-ui/libpeerconnection.log
+ng-pm-ui/npm-debug.log
+ng-pm-ui/yarn-error.log
+ng-pm-ui/testem.log
+ng-pm-ui/typings
+ng-pm-ui/debug.log
+
+### System Files ###
+.DS_Store
+Thumbs.db
+
+#####
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and WebStorm
+# Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
+
+*.iws
+**.iml
+.idea/
+out/
+
+# CMake
+cmake-build-debug/
+cmake-build-release/
+
+# File-based project format
+
+# Crashlytics plugin (for Android Studio and IntelliJ)
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+fabric.properties
+
+/pii-service/docker/_data/keys.txt
+pii-service/.kotlintest/spec_failures
+mb.pid
